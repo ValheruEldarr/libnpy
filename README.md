@@ -37,7 +37,6 @@ libnpy can also be installed system-wide. This requires the meson build system. 
 ```
 meson setup builddir
 cd builddir
-meson compile
 meson install
 ```
 This will copy the `npy.hpp` into `include/libnpy/` relative to your install prefix (/usr/local/ by default) and generate and install a matching `libnpy.pc`.
