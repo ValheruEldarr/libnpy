@@ -505,8 +505,8 @@ inline npy_data<Scalar> read_npy(std::istream &in) {
 
 template <typename Scalar, typename It>
 inline npy_data_ptr<Scalar> read_npy(std::istream &in, It dst_buf, size_t count) {
-  static_assert(is_same<Scalar, std::iterator_traits<It>::value_type>,
-	        "Scalar and It::value_type must be identical");
+  static_assert(std::is_same<Scalar, typename std::iterator_traits<It>::value_type>::value,
+                "Scalar and It::value_type must be identical");
 
   std::string header_s = read_header(in);
 
